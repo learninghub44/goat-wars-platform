@@ -1,0 +1,12 @@
+# Local server-side secrets for `npm run pages:dev` (copy to .dev.vars — gitignored).
+# In production set these in Cloudflare Pages → Settings → Environment variables (mark secrets as "Encrypted").
+SUPABASE_URL=https://YOUR-PROJECT.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=            # SECRET. Supabase → Settings → API → service_role
+SUPABASE_ANON_KEY=                    # Supabase → Settings → API → anon/publishable (used server-side for admin login only)
+PAYSTACK_SECRET_KEY=sk_test_xxx       # SECRET. Use sk_test_… until you've completed the launch checklist
+PUBLIC_SITE_URL=http://localhost:8788 # Canonical https origin in production, no trailing slash
+SUPPORT_EMAIL=                        # optional; shown on the Support tab
+VOTER_HASH_SALT=                      # long random string (e.g. `openssl rand -hex 32`); required for free polls + used for rate-limit hashing
+# PAYSTACK_CHANNELS=card,mobile_money # optional; omit to use whatever your Paystack account has enabled
+# MIN_VOTE_PRICE_KES=10               # refuse to charge below this; set to your account's verified minimum
+# MAX_PAYMENT_KES=150000

@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #080A09;
+    --bg-secondary: #111512;
+    --accent: #39E477;
+    --accent-hover: #2ec966;
+    --accent-dim: rgba(57, 228, 119, 0.15);
+    --text-primary: #F6F8F6;
+    --text-secondary: #A4AEA7;
+    --border-color: #29312B;
+    --border-highlight: rgba(57, 228, 119, 0.35);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080A09;
+}
+::-webkit-scrollbar-thumb {
+  background: #29312B;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #39E477;
+}
+
+/* Subtle stadium lighting glow */
+.stadium-glow {
+  background: radial-gradient(circle at 50% 20%, rgba(57, 228, 119, 0.08) 0%, transparent 70%);
+}
+
+.stadium-spotlight-left {
+  background: radial-gradient(circle at 10% 30%, rgba(57, 228, 119, 0.09) 0%, transparent 60%);
+}
+
+.stadium-spotlight-right {
+  background: radial-gradient(circle at 90% 30%, rgba(57, 228, 119, 0.09) 0%, transparent 60%);
+}
+
+/* Respect reduced-motion preference globally */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid #39E477;
+  outline-offset: 2px;
+}
